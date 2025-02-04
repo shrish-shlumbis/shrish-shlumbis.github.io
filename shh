@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; margin-top: 50px; }
+        .container { max-width: 400px; margin: auto; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); }
+        button { margin: 10px; padding: 10px 20px; font-size: 16px; border: none; cursor: pointer; }
+        #noBtn { position: absolute; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Will you be my Valentine? 💖</h2>
+        <button onclick="alert('Yay! I knew you would say yes! 💘')">Yes</button>
+        <button id="noBtn" onmouseover="moveButton()">No</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            let x = Math.random() * window.innerWidth * 0.7;
+            let y = Math.random() * window.innerHeight * 0.7;
+            document.getElementById('noBtn').style.left = x + "px";
+            document.getElementById('noBtn').style.top = y + "px";
+        }
+    </script>
+
+</body>
+</html>
