@@ -55,6 +55,7 @@
             background: #ff4d88;
             color: white;
             font-size: 18px;
+            transition: all 0.3s ease-in-out;
         }
         #noBtn {
             background: #ddd;
@@ -67,12 +68,12 @@
 
     <div class="container">
         <div class="stickers">
-            <img src="https://imgur.com/a/3ZkcOw0"> <!-- Replace with actual bear couple image -->
+            <img src="https://media-hosting.imagekit.io//efafb889679a4273/screenshot_1738678325207.png?Expires=1833286344&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Lt7LKztbuw5jJSzE7sWWekNQEFu8UfnT8A4j-opXUuA8PE-EgnNrcmZAQpDCQdreFnQndiKhZ6Cl6gbAv22cpg9mlDCSFdGEUS9yLPMVRH6Oboonks-s-F2vAyQT5GzxgsWAgLMkhybvBQ4skCBoH0sHHK3fSRx5-u8lrsxnhW8~W1vK7IiCDpQM6Cg-Vp7i05hwW6atEWPb838hOQaRUBtD5RoesFvvasfjLhR7eBxzMsnTRLYj3SerVRsFgoorMS7vPMDThpb8PYrE4Vik09M78sC~hMnxL~uOy9KKsRHhYGag5IqkTYY-4RR8zLhGd~ZIjtsc1Plcbd8N09ohrA__" alt="Cute Bear Couple"> <!-- Replace with actual link -->
         </div>
         <h2>Will you be my Valentine? 🧸💖</h2>
         <div class="buttons">
             <button id="yesBtn" onclick="sayYes()">Yes</button>
-            <button id="noBtn" onmouseover="moveNo()" onclick="growYes()">No</button>
+            <button id="noBtn" onmouseover="moveNo(); growYes()">No</button>
         </div>
     </div>
 
