@@ -3,35 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be My Valentine? 💘</title>
+    <title>Be My Valentine? 🧸💖</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
         body {
             text-align: center;
-            font-family: Arial, sans-serif;
-            background-color: #ffe6f2;
-            margin-top: 50px;
+            background: linear-gradient(135deg, #ffccd5, #ff99cc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            max-width: 400px;
-            margin: auto;
-            padding: 20px;
-            background: #ff99cc;
-            border-radius: 15px;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
         }
         h2 {
-            font-size: 24px;
-            color: white;
+            font-size: 30px;
+            color: #ff4d88;
+            margin-bottom: 20px;
         }
-        .stickers {
-            font-size: 50px;
+        .stickers img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
         }
         .buttons {
             margin-top: 20px;
         }
         button {
             margin: 10px;
-            padding: 10px 20px;
+            padding: 15px 30px;
             font-size: 18px;
             border: none;
             cursor: pointer;
@@ -41,6 +54,7 @@
         #yesBtn {
             background: #ff4d88;
             color: white;
+            font-size: 18px;
         }
         #noBtn {
             background: #ddd;
@@ -52,8 +66,10 @@
 <body>
 
     <div class="container">
-        <div class="stickers">💑💕</div>
-        <h2>Will you be my Valentine? 💖</h2>
+        <div class="stickers">
+            <img src="https://i.imgur.com/VYXUUiV.png" alt="Cute Bear Couple"> <!-- Replace with actual bear couple image -->
+        </div>
+        <h2>Will you be my Valentine? 🧸💖</h2>
         <div class="buttons">
             <button id="yesBtn" onclick="sayYes()">Yes</button>
             <button id="noBtn" onmouseover="moveNo()" onclick="growYes()">No</button>
@@ -63,10 +79,10 @@
     <script>
         let yesButton = document.getElementById('yesBtn');
         let noButton = document.getElementById('noBtn');
-        let size = 18; // Initial font size for Yes button
+        let size = 18;
 
         function sayYes() {
-            alert('Yay! You made my heart the happiest! ❤️💖');
+            alert('Yay! You made my heart the happiest! ❤️🐻');
         }
 
         function moveNo() {
