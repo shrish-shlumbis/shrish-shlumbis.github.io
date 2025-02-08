@@ -41,31 +41,30 @@
       color: #ff4d88;
     }
     /* Main Valentine Page Styles */
-    .container {
+    #main-container {
       width: 100%;
       height: 100vh;
-      display: flex;
+      display: none; /* Initially hidden */
       flex-direction: column;
       justify-content: center;
       align-items: center;
       background: rgba(255, 255, 255, 0.8);
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-      display: none; /* Initially hidden */
     }
-    h2 {
+    #main-container h2 {
       font-size: 30px;
       color: #ff4d88;
       margin-bottom: 20px;
     }
-    .stickers img {
+    #main-container .stickers img {
       width: 150px;
       height: auto;
       margin-bottom: 20px;
     }
-    .buttons {
+    #main-container .buttons {
       margin-top: 20px;
     }
-    button {
+    #main-container button {
       margin: 10px;
       padding: 15px 30px;
       font-size: 18px;
@@ -84,6 +83,25 @@
       color: black;
       position: absolute;
     }
+    /* Yes Screen Styles */
+    #yes-container {
+      width: 100%;
+      height: 100vh;
+      display: none; /* Initially hidden */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffccd5, #ff99cc);
+    }
+    #yes-container h1 {
+      font-size: 36px;
+      color: #ff4d88;
+      margin-bottom: 20px;
+    }
+    #yes-container img {
+      width: 300px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -94,7 +112,7 @@
   </div>
 
   <!-- Main Valentine Page Content -->
-  <div class="container">
+  <div id="main-container">
     <div class="stickers">
       <img
         src="https://media-hosting.imagekit.io//efafb889679a4273/screenshot_1738678325207.png?Expires=1833286344&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Lt7LKztbuw5jJSzE7sWWekNQEFu8UfnT8A4j-opXUuA8PE-EgnNrcmZAQpDCQdreFnQndiKhZ6Cl6gbAv22cpg9mlDCSFdGEUS9yLPMVRH6Oboonks-s-F2vAyQT5GzxgsWAgLMkhybvBQ4skCBoH0sHHK3fSRx5-u8lrsxnhW8~W1vK7IiCDpQM6Cg-Vp7i05hwW6atEWPb838hOQaRUBtD5RoesFvvasfjLhR7eBxzMsnTRLYj3SerVRsFgoorMS7vPMDThpb8PYrE4Vik09M78sC~hMnxL~uOy9KKsRHhYGag5IqkTYY-4RR8zLhGd~ZIjtsc1Plcbd8N09ohrA__"
@@ -108,21 +126,30 @@
     </div>
   </div>
 
+  <!-- Yes Screen Content -->
+  <div id="yes-container">
+    <h1>Yay! I knew you would say yes Ahehehehe >< ❤️🐻</h1>
+    <img src="https://media.tenor.com/A5VhCveZ_ygAAAAi/peach-and-goma-peach-goma.gif" alt="Penguin cuddling sticker" />
+  </div>
+
   <script>
-    // When the penguin image is clicked, hide the front screen and display the main container.
+    // When the penguin image is clicked, hide the front screen and show the main container.
     document.getElementById("peng-img").addEventListener("click", function () {
       document.getElementById("front-screen").style.display = "none";
-      document.querySelector(".container").style.display = "flex";
+      document.getElementById("main-container").style.display = "flex";
     });
 
     let yesButton = document.getElementById("yesBtn");
     let noButton = document.getElementById("noBtn");
     let size = 18;
 
+    // When the user clicks "Yes", switch to the Yes screen.
     function sayYes() {
-      alert("Yay! I knew you would say yes Ahehehehe >< ❤️🐻");
+      document.getElementById("main-container").style.display = "none";
+      document.getElementById("yes-container").style.display = "flex";
     }
 
+    // Makes the "No" button move when hovered.
     function moveNo() {
       let x = Math.random() * window.innerWidth * 0.7;
       let y = Math.random() * window.innerHeight * 0.7;
@@ -130,6 +157,7 @@
       noButton.style.top = y + "px";
     }
 
+    // Grows the "Yes" button text when the "No" button is hovered.
     function growYes() {
       size += 10;
       yesButton.style.fontSize = size + "px";
