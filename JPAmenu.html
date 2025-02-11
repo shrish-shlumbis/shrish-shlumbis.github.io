@@ -6,9 +6,9 @@
     <title>Jay Pritzker Academy Lunch Menu</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center;
-            background-color: #f4f4f4;
+            background-color: #ffebf7;
             padding: 20px;
         }
         .container {
@@ -16,31 +16,45 @@
             margin: auto;
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .logo {
+            max-width: 100px;
+            margin-bottom: 10px;
         }
         .menu {
             display: none;
+            animation: fadeIn 0.5s ease-in-out;
         }
         .active {
             display: block;
         }
         button {
             margin: 5px;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            background-color: #007bff;
+            background-color: #ff69b4;
             color: white;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.2s;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #ff1493;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="logo.png" alt="Jay Pritzker Academy Logo" class="logo">
         <h1>Jay Pritzker Academy Lunch Menu</h1>
         <div>
             <button onclick="showMenu('monday')">Monday</button>
@@ -51,23 +65,23 @@
         </div>
         <div id="monday" class="menu active">
             <h2>Monday</h2>
-            <p>Grilled Chicken with Rice and Vegetables</p>
+            <p>Grilled Chicken with Rice and Vegetables 🍗</p>
         </div>
         <div id="tuesday" class="menu">
             <h2>Tuesday</h2>
-            <p>Spaghetti with Meatballs and Garlic Bread</p>
+            <p>Spaghetti with Meatballs and Garlic Bread 🍝</p>
         </div>
         <div id="wednesday" class="menu">
             <h2>Wednesday</h2>
-            <p>Vegetable Stir-Fry with Tofu and Noodles</p>
+            <p>Vegetable Stir-Fry with Tofu and Noodles 🥗</p>
         </div>
         <div id="thursday" class="menu">
             <h2>Thursday</h2>
-            <p>Beef Tacos with Salsa and Guacamole</p>
+            <p>Beef Tacos with Salsa and Guacamole 🌮</p>
         </div>
         <div id="friday" class="menu">
             <h2>Friday</h2>
-            <p>Fish Fillet with Mashed Potatoes and Salad</p>
+            <p>Fish Fillet with Mashed Potatoes and Salad 🐟</p>
         </div>
     </div>
 
