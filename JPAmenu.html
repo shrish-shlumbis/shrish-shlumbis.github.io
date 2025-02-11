@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Pritzker Academy Lunch Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jay Pritzker Academy Lunch Menu</h1>
+        <div>
+            <button onclick="showMenu('monday')">Monday</button>
+            <button onclick="showMenu('tuesday')">Tuesday</button>
+            <button onclick="showMenu('wednesday')">Wednesday</button>
+            <button onclick="showMenu('thursday')">Thursday</button>
+            <button onclick="showMenu('friday')">Friday</button>
+        </div>
+        <div id="monday" class="menu active">
+            <h2>Monday</h2>
+            <p>Grilled Chicken with Rice and Vegetables</p>
+        </div>
+        <div id="tuesday" class="menu">
+            <h2>Tuesday</h2>
+            <p>Spaghetti with Meatballs and Garlic Bread</p>
+        </div>
+        <div id="wednesday" class="menu">
+            <h2>Wednesday</h2>
+            <p>Vegetable Stir-Fry with Tofu and Noodles</p>
+        </div>
+        <div id="thursday" class="menu">
+            <h2>Thursday</h2>
+            <p>Beef Tacos with Salsa and Guacamole</p>
+        </div>
+        <div id="friday" class="menu">
+            <h2>Friday</h2>
+            <p>Fish Fillet with Mashed Potatoes and Salad</p>
+        </div>
+    </div>
+
+    <script>
+        function showMenu(day) {
+            let menus = document.querySelectorAll('.menu');
+            menus.forEach(menu => menu.classList.remove('active'));
+            document.getElementById(day).classList.add('active');
+        }
+    </script>
+</body>
+</html>
